@@ -1,0 +1,14 @@
+Get all the nth elments of a 2-d array into another array
+
+   costs = [[10,20],[30,200],[400,50],[30,20]]   n=1
+
+   acosts = [cost[n] for cost in costs]
+   acosts = [30,200,50,20]
+
+*** Sort by difference **
+  costs.sort(key=lambda x: x[0] - x[1])
+
+
+** Sort a Dictionary by values:
+   sorted_items = sorted(action_dict.items(), key=lambda item: item[1], reverse=True)
+

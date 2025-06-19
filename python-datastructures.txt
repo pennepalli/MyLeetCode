@@ -1,0 +1,94 @@
+
+## ✅ Summary Table
+
+| Type      | Ordered  | Mutable  | Duplicates  | Indexable  | Avg Lookup | Use Case            | Syntax    |
+| --------- | -------- | -------- | ----------- | ---------- | ---------- | ------------------- | ------------------- 
+| **List**  | ✅       | ✅       | ✅          | ✅         | O(n)       | Ordered collection  | [1,2,3,a,"B",c]
+| **Tuple** | ✅       | ❌       | ✅          | ✅         | O(n)       | Immutable data      | ("a","b",c,1,2,3)
+| **Set**   | ❌       | ✅       | ❌          | ❌         | O(1)       | Uniqueness          | {1,2,3,"a","b","c"}
+| **Dict**  | ❌\*     | ✅       | N/A         | ❌         | O(1)       | Key-value mapping   | {'a':11,'b':20}
+| **Deque** | ✅       | ✅       | ✅          | ✅         | O(1)\*     | Fast queue behavior |
+
+*\*Dicts preserve insertion order as of Python 3.7+*
+---
+
+## 🔹 1. **List**
+
+* **Syntax:** `my_list = [1, 2, 3]`
+* **Ordered:** ✅
+* **Mutable:** ✅
+* **Duplicates allowed:** ✅
+* **Indexable:** ✅
+* **Use Cases:** Storing ordered collections, queue-like behavior, when elements can repeat and order matters.
+* **Performance:**
+
+  * Access: `O(1)`
+  * Insert/Delete: `O(n)` (due to shifting)
+  * Membership test (`x in list`): `O(n)`
+
+---
+
+## 🔹 2. **Tuple**
+
+* **Syntax:** `my_tuple = (1, 2, 3)`
+* **Ordered:** ✅
+* **Immutable:** ✅
+* **Duplicates allowed:** ✅
+* **Indexable:** ✅
+* **Use Cases:** Fixed-size, immutable data like coordinates, dictionary keys, or function returns.
+* **Performance:**
+
+  * Access: `O(1)`
+  * Faster than lists (due to immutability)
+
+---
+
+## 🔹 3. **Set**
+
+* **Syntax:** `my_set = {1, 2, 3}`
+* **Unordered:** ✅
+* **Mutable:** ✅ (but elements must be immutable)
+* **Duplicates allowed:** ❌ (automatically removed)
+* **Indexable:** ❌ (no indexing/slicing)
+* **Use Cases:** Membership testing, uniqueness filtering, set operations (`union`, `intersection`, `difference`)
+* **Performance:**
+
+  * Membership test (`x in set`): `O(1)`
+  * Add/Remove: `O(1)`
+
+---
+
+## 🔹 4. **Dictionary**
+
+* **Syntax:** `my_dict = {'a': 1, 'b': 2}`
+* **Key-value pairs:** ✅
+* **Mutable:** ✅
+* **Keys must be immutable (e.g., strings, numbers, tuples)**
+* **Use Cases:** Fast lookup, mapping data, counting (like with `collections.Counter`)
+* **Performance:**
+
+  * Lookup: `O(1)`
+  * Insert/Delete: `O(1)`
+
+---
+
+## 🔹 5. **Deque (from `collections`)**
+
+* **Syntax:** `from collections import deque; dq = deque([1, 2, 3])`
+* **Double-ended queue:** ✅
+* **Mutable:** ✅
+* **Use Cases:** Fast appends/pops from both ends (ideal for BFS, sliding windows)
+* **Performance:**
+
+  * Append/pop from ends: `O(1)`
+
+---
+
+### 🔍 In Interviews:
+
+* Use **set** for fast lookups or removing duplicates.
+* Use **deque** when you need **O(1)** pops from both ends (e.g., sliding window).
+* Use **tuple** as a **dict key** or in memoization (e.g., `dp[(i, j)]`).
+* Use **list** when order and duplicates matter.
+
+---

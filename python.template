@@ -1,0 +1,16 @@
+#!/usr/bin/python3
+
+import sys
+
+def
+ 
+if __name__ == "__main__":
+
+    (2 strings)
+    inp1 = sys.argv[1]
+    inp2 = sys.argv[2]
+
+    (comma separated strings + int)
+    inarr = [int(num) for num in sys.argv[1].split(",")]
+    fm = int(sys.argv[2])
+
